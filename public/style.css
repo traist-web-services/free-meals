@@ -68,9 +68,9 @@ header h1 a {
 footer {
   position: absolute;
   left: 10px;
-  bottom: 10px;
+  bottom: 15px;
   z-index: 100000;
-  width: 100%;
+  max-width: 50vw;
 } 
 
 footer h1 {
@@ -81,12 +81,23 @@ footer h1 {
   bottom: 0;
 }
 
+footer small {
+  font-size: 0.7rem;
+}
 #mymap {
   position: absolute;
   top: 0;
   left: 0;
 }
 
+a.nav-link {
+  color: #000000;
+}
+
 body {
   font-family: "Work Sans", sans-serif;
+}
+
+.popup {
+  font-size: 1.2rem;
 }

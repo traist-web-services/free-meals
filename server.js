@@ -33,25 +33,26 @@ app.get("/data", function(_, response) {
   } else {
     // Select the first 10 records from the view.
     base(tableName).select({
-      maxRecords: 10,
+      maxRecords: 100,
       view: viewName,
-    }).firstPage(function(error, records) {
-      if (error) {
-        response.send({error: error});
-      } else {
-        cachedResponse = {
-          records: records.map(record => {
-            return {
+    }).eachPage(function page(records, fetchNextPage) {
+      records.forEach(function(record) {
+        var thisRecord = {
               name: record.get('Name'),
-              picture: record.get('Picture'),
-            };
-          }),
+              lat: record.get('Latitude'),
+              lon: record.get('Longitude'),
+              url: record.get('Website'),
+              notes: record.get('Comments')
+          };
+        cachedResponse = {
+          ...cachedResponse, 
+          thisRecord
         };
-        cachedResponseDate = new Date();
-        
-        response.send(cachedResponse);
-      }
+      });
     });
+
+    cachedResponseDate = new Date();
+    response.send(cachedResponse);
   }
 });
 

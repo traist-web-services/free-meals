@@ -15,7 +15,12 @@ $(function() {
     
     var text = ""
     data.records.forEach(function(record) {
-      text += record.name
+      var name = record.name;
+      var lat = record.lat;
+      var lon = record.lon;
+      var url = record.url;
+      var notes = record.notes;
+      text += "<a href=\""+url+"\">"+name+"</a>";
     });
     
     $dataContainer.html(text);

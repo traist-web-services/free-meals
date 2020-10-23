@@ -100,6 +100,7 @@ footer h1 {
   position: absolute;
   bottom: 0;
   width: max-content;
+  max-width: 60vw;
 }
 
 footer small {

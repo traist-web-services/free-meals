@@ -1,6 +1,6 @@
 $(function() {
   var userLocation = [53.463059, -2.29134];
-  var mymap = L.map("mapid").setView(userLocation, 13);
+  var mymap = L.map("mapid").setView(userLocation, 14);
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,
     attribution:
@@ -46,7 +46,7 @@ $(function() {
             (notes || "") +
             '<br><a href="' +
             url +
-            ' target="_blank">' +
+            '" target="_blank">' +
             name +
             "</a><br><a href=\"https://www.google.com/maps/dir/?api=1&destination="+lat+","+lon+"\" target=\"_blank\" class=\"nav-link\">📍 Directions</a></div>"
         );

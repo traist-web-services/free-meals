@@ -52,13 +52,22 @@ header {
   position: absolute;
   right: 10px;
   top: 10px;
-  z-index: 100000;
+  z-index: 1000;
+  max-width: 80vw;
+}
+
+.leaflet-control-container {
+  z-index: 100001;
 }
 
 header h1 {
   font-size: 2rem;  
   background-color: #ffffff;
   padding: 5px;
+  max-width: 80vw;
+  wrap: auto;
+  text-align: right;
+  overflow-x: wrap;
 }
 
 header h1 a {

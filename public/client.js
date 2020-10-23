@@ -1,6 +1,18 @@
 $(function() {
   var userLocation = [53.463059, -2.29134];
   var mymap = L.map("mapid").setView(userLocation, 14);
+  
+  L.Marker.prototype.options.icon = L.icon({
+    iconUrl: 'https://cdn.glitch.com/4c0f61c1-ab19-4504-a817-db81aa851c36%2Fmarker-icon.png?v=1603491669838',
+    iconSize: [25, 41],
+    iconAnchor: [22, 94],
+    popupAnchor: [-3, -76],
+    shadowUrl: 'my-icon-shadow.png',
+    shadowSize: [68, 95],
+    shadowAnchor: [22, 94]
+})
+  
+  
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,
     attribution:

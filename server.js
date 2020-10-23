@@ -14,7 +14,7 @@ app.get("/", function(request, response) {
   response.sendFile(__dirname + "/views/index.html");
 });
 
-var cacheTimeoutMs = 5 * 1000; // Cache for 5 seconds.
+var cacheTimeoutMs = 30 * 1000; // Cache for 30 seconds.
 var cachedResponse = [];
 var cachedResponseDate = null;
 

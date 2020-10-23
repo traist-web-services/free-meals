@@ -30,6 +30,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+  overflow: hidden;
 }
 ol, ul {
 	list-style: none;
@@ -49,13 +50,43 @@ table {
 
 header {
   position: absolute;
-  top: 0;
-  opacity: 0.2;
+  right: 10px;
+  top: 10px;
   z-index: 100000;
+}
+
+header h1 {
+  font-size: 2rem;  
+  background-color: #ffffff;
+  padding: 5px;
+}
+
+header h1 a {
+  color: #000000;
+}
+
+footer {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  z-index: 100000;
+  width: 100%;
+} 
+
+footer h1 {
+  font-size: 1rem;
+  background-color: #ffffff;
+  padding: 5px;
+  position: absolute;
+  bottom: 0;
 }
 
 #mymap {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+body {
+  font-family: "Work Sans", sans-serif;
 }

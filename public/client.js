@@ -7,8 +7,8 @@ $(function() {
     iconSize: [25, 41],
     iconAnchor: [22, 94],
     popupAnchor: [-3, -76],
-    shadowUrl: 'my-icon-shadow.png',
-    shadowSize: [68, 95],
+    shadowUrl: 'https://cdn.glitch.com/4c0f61c1-ab19-4504-a817-db81aa851c36%2Fmarker-shadow.png?v=1603491093868',
+    shadowSize: [41, 41],
     shadowAnchor: [22, 94]
 })
   

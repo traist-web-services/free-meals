@@ -146,3 +146,12 @@ body {
 .leaflet-control-zoom.leaflet-bar.leaflet-control {
   color: var(--main-text) !important;
 }
+
+.leaflet-popup-content-wrapper {
+}
+
+.leaflet-popup-content-wrapper .leaflet-popup-content {
+}
+
+.leaflet-popup-tip-container {
+}

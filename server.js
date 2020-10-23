@@ -22,7 +22,7 @@ app.get("/data", function(_, response) {
   if (cachedResponse && new Date() - cachedResponseDate < cacheTimeoutMs) {
     response.send(cachedResponse);
   } else {
-    cachedResponse = [];
+    // cachedResponse = [];
     base(tableName)
       .select({
         maxRecords: 100,
@@ -37,9 +37,12 @@ app.get("/data", function(_, response) {
             url: record.get("Website"),
             notes: record.get("Comments")
           };
+          if (!thisRecord.name) return;
           cachedResponse.push(thisRecord);
         });
-      });
+      })
+      cachedResponseDate = new Date();
+      response.send({ records: cachedResponse });
   }
 });
 

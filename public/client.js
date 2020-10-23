@@ -1,24 +1,19 @@
-// client-side js
-// run by the browser each time your view template is loaded
-
 $(function() {
-  var userLocation = null;
-  if(!navigator.geolocation) {
-    userLocation = [53.463059, -2.291340];
-  } else {
+  var userLocation = [53.463059, -2.291340];
+  var mymap = L.map('mapid').setView(userLocation, 13);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	  maxZoom: 19,
+	  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(mymap);
+  
+  if(navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
       console.log(position);
       userLocation = [position.coords.latitude, position.coords.longitude];
-      console.log(userLocation);
+      mymap.panTo(userLocation);
+      L.marker(userLocation).addTo(mymap).bindPopup("You are here").openPopup();
     });
   }
-  var mymap = L.map('mapid').setView(userLocation, 13);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-     attribution:
-         '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
-     maxZoom: 18
-  }).addTo(mymap);
-  
   /*
   $.getJSON('/data', function(data) {
     var $dataContainer = $('#data-container');

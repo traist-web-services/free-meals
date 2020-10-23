@@ -44,7 +44,7 @@ $(function() {
             name +
             "</strong><br>" +
             (notes || "") +
-            '<br><a href="' +
+            '<br>🔗 <a href="' +
             url +
             '" target="_blank">' +
             name +

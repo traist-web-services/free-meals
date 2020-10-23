@@ -99,6 +99,7 @@ footer h1 {
   padding: 5px;
   position: absolute;
   bottom: 0;
+  width: max-content;
 }
 
 footer small {
@@ -125,6 +126,7 @@ body {
 
 .popup {
   font-size: 1.2rem;
+  text-transform: capitalize;
 }
 
 .add-link {
@@ -147,11 +149,16 @@ body {
   color: var(--main-text) !important;
 }
 
-.leaflet-popup-content-wrapper {
+.leaflet-popup-content-wrapper, .leaflet-popup-content, .leaflet-popup-tip-container {
+  background-color: var(--main-bg);
+  color: var(--main-text);
+  box-shadow: 1px 1px 10px var(--main-bg);
 }
 
-.leaflet-popup-content-wrapper .leaflet-popup-content {
+.leaflet-popup-content-wrapper a, .leaflet-popup-content a, .leaflet-popup-tip-container a {
+  color: var(--main-text);
 }
 
-.leaflet-popup-tip-container {
+a {
+  text-decoration: none;
 }

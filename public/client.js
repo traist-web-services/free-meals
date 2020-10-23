@@ -14,8 +14,7 @@ $(function() {
       mymap.panTo(userLocation);
       L.marker(userLocation)
         .addTo(mymap)
-        .bindPopup("You are here")
-        .openPopup();
+        .bindPopup("You are here");
     });
   }
 

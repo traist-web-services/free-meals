@@ -14,7 +14,7 @@ $(function() {
       L.marker(userLocation).addTo(mymap).bindPopup("You are here").openPopup();
     });
   }
-  /*
+
   $.getJSON('/data', function(data) {
     var $dataContainer = $('#data-container');
       
@@ -35,10 +35,9 @@ $(function() {
       var notes = record.notes;
       text += "<li><a href=\""+url+"\">"+name+"</a></li>";
       var marker = L.marker([lat, lon]).addTo(mymap);
-      marker.bindPopup("<strong>"+name+"</strong><br>I am a popup.");
+      marker.bindPopup("<strong>"+name+"</strong><br>"+(notes || "")+"<br><a href=\""+url+" target=\"_blank\">"+name+"</a>");
     });
     
     $dataContainer.html("<ul>" + text + "</ul>");
   });
-  */
 });

@@ -47,3 +47,15 @@ table {
 	border-spacing: 0;
 }
 
+header {
+  position: absolute;
+  top: 0;
+  opacity: 0.2;
+  z-index: 100000;
+}
+
+#mymap {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

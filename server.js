@@ -20,7 +20,7 @@ var cachedResponseDate = null;
 
 app.get("/data", function(_, response) {
   if (cachedResponse && new Date() - cachedResponseDate < cacheTimeoutMs) {
-    response.send(cachedResponse);
+    response.send({ records: cachedResponse });
   } else {
     // cachedResponse = [];
     base(tableName)
@@ -40,9 +40,9 @@ app.get("/data", function(_, response) {
           if (!thisRecord.name) return;
           cachedResponse.push(thisRecord);
         });
-      })
-      cachedResponseDate = new Date();
-      response.send({ records: cachedResponse });
+      });
+    cachedResponseDate = new Date();
+    response.send({ records: cachedResponse });
   }
 });
 

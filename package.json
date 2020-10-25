@@ -1,7 +1,7 @@
 {
-  "name": "airtable-example",
-  "version": "0.0.1",
-  "description": "Display data from an Airtable base",
+  "name": "free-meals",
+  "version": "1.0.0",
+  "description": "#EndChildFoodPoverty - a map of locations offering free school meals during the October half term in 2020",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
@@ -18,7 +18,8 @@
   "keywords": [
     "node",
     "express",
-    "airtable"
+    "airtable",
+    "sqlite"
   ],
   "license": "MIT"
 }

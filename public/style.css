@@ -126,8 +126,19 @@ body {
 }
 
 .popup {
-  font-size: 1.2rem;
+  position: static;
   text-transform: capitalize;
+  z-index: 999999999;
+  overflow: hidden;
+}
+
+.leaflet-popup-tip-container {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.leaflet-popup-tip {
+  background-color: var(--main-bg);
 }
 
 .add-link {

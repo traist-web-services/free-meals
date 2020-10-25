@@ -1,7 +1,3 @@
-// server.js
-// where your node app starts
-
-// init project
 var express = require("express");
 var Sequelize = require("sequelize");
 var app = express();
@@ -69,34 +65,6 @@ app.get("/", function(request, response) {
 var cacheTimeoutMs = 30 * 1000; // Cache for 30 seconds.
 var cachedResponse = [];
 var cachedResponseDate = null;
-
-app.get("/data_at", function(_, response) {
-  if (cachedResponse && new Date() - cachedResponseDate < cacheTimeoutMs) {
-    response.send({ records: cachedResponse });
-  } else {
-    base(tableName)
-      .select({
-        maxRecords: 100,
-        view: viewName
-      })
-      .eachPage(function page(records, fetchNextPage) {
-        records.forEach(function(record) {
-          var thisRecord = {
-            name: record.get("Name"),
-            lat: record.get("Latitude"),
-            lon: record.get("Longitude"),
-            url: record.get("Website"),
-            notes: record.get("Comments")
-          };
-          if (!thisRecord.name) return;
-          cachedResponse.push(thisRecord);
-        });
-        fetchNextPage();
-      });
-    cachedResponseDate = new Date();
-    response.send({ records: cachedResponse });
-  }
-});
 
 app.get("/data", function(request, response) {
   if (cachedResponse && new Date() - cachedResponseDate < cacheTimeoutMs) {

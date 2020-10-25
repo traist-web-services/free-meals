@@ -52,7 +52,7 @@ $(function() {
         var notes = record.notes;
         text += '<li><a href="' + url + '">' + name + "</a></li>";
         var marker = L.marker([lat, lon]).addTo(mymap);
-        marker.bindPopup("<div class=\"popup\"><strong>" +
+        var textToDisplay = "<div class=\"popup\"><strong>" +
             name +
             "</strong><br>" +
             (notes || "") +
@@ -61,7 +61,7 @@ $(function() {
             '" target="_blank">' +
             name +
             "</a><br><a href=\"https://www.google.com/maps/dir/?api=1&destination="+lat+","+lon+"\" target=\"_blank\" class=\"nav-link\">📍 Directions</a></div>"
-        );
+        marker.bindPopup(Autolinker.link(textToDisplay));
       });
 
       $dataContainer.html("<ul>" + text + "</ul>");
